@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.tonyganchev.blog</groupId>
+	<artifactId>karaf</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<url>http://www.tonyganchev.com/</url>
+	<organization>
+		<name>Tony Ganchev</name>
+		<url>http://www.tonyganchev.com/</url>
+	</organization>
+	<scm>
+		<url>https://github.com/tonyganchev/blog.git</url>
+		<connection>scm:git:https://github.com/tonyganchev/blog.git</connection>
+		<developerConnection>scm:git:https://github.com/tonyganchev/blog.git</developerConnection>
+	</scm>
+
+	<modules>
+		<module>karaf-bundle-a</module>
+		<module>karaf-bundle-b</module>
+		<module>karaf-bundle-c</module>
+		<module>karaf-assembly</module>
+		<module>karaf-kar</module>
+		<module>karaf-wab</module>
+	</modules>
+
+	<properties>
+		<karaf.version>4.0.3</karaf.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>6.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.service.blueprint</artifactId>
+				<version>1.0.2</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.aries.blueprint</groupId>
+				<artifactId>org.apache.aries.blueprint.api</artifactId>
+				<version>1.0.1</version>
+				<type>bundle</type>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>framework</artifactId>
+				<version>${karaf.version}</version>
+				<type>kar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>standard</artifactId>
+				<version>${karaf.version}</version>
+				<classifier>features</classifier>
+				<type>xml</type>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>enterprise</artifactId>
+				<version>${karaf.version}</version>
+				<classifier>features</classifier>
+				<type>xml</type>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>spring</artifactId>
+				<version>${karaf.version}</version>
+				<classifier>features</classifier>
+				<type>xml</type>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.web</groupId>
+				<artifactId>pax-web-features</artifactId>
+				<version>4.2.4</version>
+				<classifier>features</classifier>
+				<type>xml</type>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>3.0.0</version>
+					<extensions>true</extensions>
+					<configuration>
+						<instructions>
+							<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+							<Bundle-Version>${project.version}</Bundle-Version>
+							<_removeheaders>Import-Service,Export-Service</_removeheaders>
+						</instructions>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.karaf.tooling</groupId>
+					<artifactId>karaf-maven-plugin</artifactId>
+					<version>${karaf.version}</version>
+					<extensions>true</extensions>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.karaf.tooling</groupId>
+										<artifactId>karaf-maven-plugin</artifactId>
+										<versionRange>[${karaf.version},)</versionRange>
+										<goals>
+											<goal>assembly</goal>
+											<goal>features-generate-descriptor</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.felix</groupId>
+										<artifactId>maven-bundle-plugin</artifactId>
+										<versionRange>[2.3.7,)</versionRange>
+										<goals>
+											<goal>manifest</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.karaf.tooling</groupId>
+				<artifactId>karaf-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/groups/snapshots-group/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/groups/snapshots-group/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+</project>
