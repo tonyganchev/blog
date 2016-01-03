@@ -2,14 +2,13 @@
 <features name="${project.artifactId}-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0">
 	<feature name="${project.artifactId}" description="${project.name}" version="${project.version}">
 		<details>Sample feature details...</details>
-<!-- 		<feature version="${karaf.version}" prerequisite="false" dependency="false">aries-proxy</feature> -->
-		<feature version="${karaf.version}" prerequisite="false" dependency="false">aries-blueprint</feature>
-		<feature version="${karaf.version}" prerequisite="false" dependency="false">war</feature>
-		<!-- <bundle start-level="20" dependency="true">mvn:org.apache.aries/org.apache.aries.util/1.1.1</bundle> -->
-		<!-- <bundle>mvn:javax.servlet/javax.servlet-api/3.1.0</bundle> -->
-		<!-- <bundle>mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.core/1.0.1</bundle> -->
-		<!-- <bundle>mvn:org.apache.aries.proxy/org.apache.aries.proxy.api/1.0.1</bundle> -->
-		<!-- <bundle>mvn:org.apache.aries/org.apache.aries.util/1.0.0</bundle> -->
-		<!-- <bundle>mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.api/1.0.1</bundle> -->
+		<feature version="${karaf.version}" prerequisite="false" dependency="true">aries-proxy</feature>
+		<feature version="${karaf.version}" prerequisite="false" dependency="true">aries-blueprint</feature>
+		<feature version="${karaf.version}" prerequisite="false" dependency="true">war</feature>
+		<bundle start-level="20" dependency="true">mvn:org.apache.aries/org.apache.aries.util/1.1.1</bundle>
+		<bundle start-level="20" dependency="true">mvn:javax.servlet/javax.servlet-api/3.1.0</bundle>
+		<bundle start-level="20" dependency="true">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.core/1.0.1</bundle>
+		<bundle start-level="20" dependency="true">mvn:org.apache.aries.proxy/org.apache.aries.proxy.api/1.0.1</bundle>
+		<bundle start-level="20" dependency="true">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.api/1.0.1</bundle>
 	</feature>
 </features>
