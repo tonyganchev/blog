@@ -30,7 +30,8 @@
 	</modules>
 
 	<properties>
-		<karaf.version>4.0.4-SNAPSHOT</karaf.version>
+		<!--<karaf.version>4.0.4-SNAPSHOT</karaf.version>-->
+		<karaf.version>4.0.3</karaf.version>
 	</properties>
 
 	<dependencyManagement>

@@ -5,8 +5,10 @@
 
 	<reference id="greetingService" interface="com.tonyganchev.blog.karaf.a.GreetingService" />
 
-	<bean id="greetingSender" class="com.tonyganchev.blog.karaf.c.GreetingSender">
+	<bean id="greetingSender" class="com.tonyganchev.blog.karaf.c.impl.GreetingSenderImpl">
 		<argument ref="greetingService" />
 	</bean>
+
+	<service id="greetingSenderExport" ref="greetingSender" interface="com.tonyganchev.blog.karaf.c.GreetingSender" />
 
 </blueprint>

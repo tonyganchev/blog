@@ -20,6 +20,11 @@
 			<artifactId>karaf-bundle-a</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -29,6 +34,7 @@
 				<artifactId>maven-bundle-plugin</artifactId>
 				<configuration>
 					<instructions>
+						<Bundle-Activator>com.tonyganchev.blog.karaf.c.Activator</Bundle-Activator>
 						<Export-Package>com.tonyganchev.blog.karaf.c*;version=${project.version}</Export-Package>
 						<Import-Package>*</Import-Package>
 						<_removeheaders>Import-Service,Export-Service</_removeheaders>

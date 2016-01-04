@@ -7,3 +7,5 @@ karaf/karaf-bundle-b/target/
 karaf/karaf-bundle-c/target/
 karaf/karaf-kar/target/
 karaf/karaf-wab/target/
+.idea
+*.iml

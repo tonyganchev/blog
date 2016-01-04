@@ -110,8 +110,8 @@
 						<feature>shell</feature>
 						<feature>ssh</feature>
 						<feature>system</feature>
-<!-- 						<feature>aries-blueprint</feature> -->
-<!-- 						<feature>aries-proxy</feature> -->
+ 						<feature>aries-blueprint</feature>
+ 						<feature>aries-proxy</feature>
 						<feature>war</feature>
 					</bootFeatures>
 				</configuration>
