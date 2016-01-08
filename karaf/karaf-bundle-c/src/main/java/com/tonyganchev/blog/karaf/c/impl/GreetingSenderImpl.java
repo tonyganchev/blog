@@ -12,6 +12,7 @@ public class GreetingSenderImpl implements GreetingSender {
 	public GreetingSenderImpl(final GreetingService greetingService) {
 		this.greetingService = greetingService;
 		System.out.println("Greeting sender (C) started,");
+		sendGreeting("test");
 	}
 
 	private final GreetingService greetingService;
