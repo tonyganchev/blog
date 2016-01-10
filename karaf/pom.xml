@@ -35,6 +35,7 @@
 		<!-- <karaf.version>4.0.2</karaf.version> -->
 		<!-- <karaf.version>4.0.1</karaf.version> -->
 		<!-- <karaf.version>4.0.0</karaf.version> -->
+		<karaf.feature.version>4.0.4.SNAPSHOT</karaf.feature.version>
 	</properties>
 
 	<dependencyManagement>

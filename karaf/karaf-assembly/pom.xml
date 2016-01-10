@@ -68,9 +68,6 @@
 				<groupId>org.apache.karaf.tooling</groupId>
 				<artifactId>karaf-maven-plugin</artifactId>
 				<configuration>
-					<!-- <aggregateFeatures>false</aggregateFeatures> -->
-					<!-- <deployProjectArtifact>false</deployProjectArtifact> -->
-					<installAllFeaturesByDefault>false</installAllFeaturesByDefault>
 					<installedFeatures>
 					</installedFeatures>
 					<startupFeatures>
@@ -91,6 +88,7 @@
 						<feature>shell</feature>
 						<feature>ssh</feature>
 						<feature>system</feature>
+						<feature>karaf-kar</feature>
 					</bootFeatures>
 				</configuration>
 			</plugin>
