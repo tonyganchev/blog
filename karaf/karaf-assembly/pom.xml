@@ -32,6 +32,7 @@
 			<artifactId>karaf-kar</artifactId>
 			<version>${project.version}</version>
 			<type>kar</type>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 
@@ -88,7 +89,6 @@
 						<feature>shell</feature>
 						<feature>ssh</feature>
 						<feature>system</feature>
-						<feature>karaf-kar</feature>
 					</bootFeatures>
 				</configuration>
 			</plugin>
