@@ -75,19 +75,12 @@
 					</startupFeatures>
 					<bootFeatures>
 						<feature>bundle</feature>
-						<feature>config</feature>
-						<feature>deployer</feature>
 						<feature>diagnostic</feature>
 						<feature>feature</feature>
-						<feature>instance</feature>
-						<feature>http</feature>
-						<feature>kar</feature>
 						<feature>log</feature>
-						<feature>management</feature>
 						<feature>package</feature>
 						<feature>service</feature>
 						<feature>shell</feature>
-						<feature>ssh</feature>
 						<feature>system</feature>
 					</bootFeatures>
 				</configuration>
