@@ -37,6 +37,7 @@
 			<groupId>com.tonyganchev.blog</groupId>
 			<artifactId>karaf-wab</artifactId>
 			<version>${project.version}</version>
+			<type>bundle</type>
 		</dependency>
 	</dependencies>
 
