@@ -31,12 +31,6 @@
 
 	<properties>
 		<karaf.version>4.0.5-SNAPSHOT</karaf.version>
-		<!-- <karaf.version>4.0.4</karaf.version> -->
-		<!-- <karaf.version>4.0.3</karaf.version> -->
-		<!-- <karaf.version>4.0.2</karaf.version> -->
-		<!-- <karaf.version>4.0.1</karaf.version> -->
-		<!-- <karaf.version>4.0.0</karaf.version> -->
-		<!-- <karaf.feature.version>4.0.4.SNAPSHOT</karaf.feature.version> -->
 		<karaf.feature.version>4.0.5.SNAPSHOT</karaf.feature.version>
 	</properties>
 
@@ -202,7 +196,7 @@
 			<plugin>
 				<groupId>org.fusesource.mvnplugins</groupId>
 				<artifactId>maven-graph-plugin</artifactId>
-				<version>1.39-SNAPSHOT</version>
+				<version>1.38</version>
 				<configuration>
 					<keepDot>true</keepDot>
 				</configuration>
@@ -212,16 +206,6 @@
 	</build>
 
 	<pluginRepositories>
-		<!--<pluginRepository>-->
-			<!--<id>mvnplugins.fusesource.org</id>-->
-			<!--<url>http://mvnplugins.fusesource.org/repo/release</url>-->
-			<!--<releases>-->
-				<!--<enabled>true</enabled>-->
-			<!--</releases>-->
-			<!--<snapshots>-->
-				<!--<enabled>false</enabled>-->
-			<!--</snapshots>-->
-		<!--</pluginRepository>-->
 		<pluginRepository>
 			<id>apache-snapshots</id>
 			<url>https://repository.apache.org/content/groups/snapshots-group/</url>
