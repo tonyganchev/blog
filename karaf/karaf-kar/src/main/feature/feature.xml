@@ -4,5 +4,8 @@
 		<details>Sample feature details...</details>
 		<feature version="${karaf.feature.version}" prerequisite="false" dependency="false">aries-blueprint</feature>
 		<feature version="${karaf.feature.version}" prerequisite="false" dependency="false">war</feature>
+		<feature version="3.1.4.RELEASE" prerequisite="false" dependency="false">spring</feature>
+		<feature version="1.2.1" prerequisite="false" dependency="false">spring-dm</feature>
+		<feature version="1.2.1" prerequisite="false" dependency="false">spring-dm-web</feature>
 	</feature>
 </features>

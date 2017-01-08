@@ -30,8 +30,8 @@
 	</modules>
 
 	<properties>
-		<karaf.version>4.0.5-SNAPSHOT</karaf.version>
-		<karaf.feature.version>4.0.5.SNAPSHOT</karaf.feature.version>
+		<karaf.version>4.0.8</karaf.version>
+		<karaf.feature.version>${karaf.version}</karaf.feature.version>
 	</properties>
 
 	<dependencyManagement>
@@ -52,6 +52,11 @@
 				<artifactId>org.apache.aries.blueprint.api</artifactId>
 				<version>1.0.1</version>
 				<type>bundle</type>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.osgi</groupId>
+				<artifactId>spring-osgi-web</artifactId>
+				<version>1.2.1</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.karaf.features</groupId>
@@ -96,6 +101,11 @@
 				<artifactId>javax.servlet-api</artifactId>
 				<version>3.1.0</version>
 				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>3.1.4.RELEASE</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
